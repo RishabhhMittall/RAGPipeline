@@ -16,3 +16,7 @@ templates=Jinja2Templates(directory="templates")
 @app.get("/")
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
+
+@app.post("/get_answer")
+async def get_answer(request: Request, question: str = Form(...)):
+    pass
